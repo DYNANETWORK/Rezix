@@ -143,7 +143,7 @@ while True:
         print(f'\n{lg}[i] Checking for updates...')
         try:
             # https://raw.githubusercontent.com/kaal0408/Rex/kaal0408/version.txt
-            version = requests.get('https://raw.githubusercontent.com/SUKHPAL443/Rex/SUKHPAL443/version.txt')
+            version = requests.get('https://raw.githubusercontent.com/SUKHPAL443/Rezix/SUKHPAL443/version.txt')
         except:
             print(f'{r} You are not connected to the internet')
             print(f'{r} Please connect to the internet and retry')
@@ -159,8 +159,8 @@ while True:
                     os.system('rm add.py')
                     os.system('rm manager.py')
                 #os.system('del scraper.py')
-                os.system('curl -l -O https://raw.githubusercontent.com/SUKHPAL443/Rex/SUKHPAL443/version.txt')
-                os.system('curl -l -O https://raw.githubusercontent.com/SUKHPAL443/Rex/SUKHPAL443/version.txt')
+                os.system('curl -l -O https://raw.githubusercontent.com/SUKHPAL443/Rezix/SUKHPAL443/version.txt')
+                os.system('curl -l -O https://raw.githubusercontent.com/SUKHPAL443/Rezix/SUKHPAL443/version.txt')
                 print(f'{lg}[*] Updated to version: {version.text}')
                 input('Press enter to exit...')
                 exit()
@@ -168,7 +168,7 @@ while True:
                 print(f'{lg}[!] Update aborted.')
                 input('Press enter to go to main menu...')
         else:
-            print(f'{lg}[i] Your  Mamba Rex Scraper is already up to date')
+            print(f'{lg}[i] Your  Mamba Rezix Scraper is already up to date')
             input('Press enter to goto main menu...')
     elif a == 5:
         clr()
