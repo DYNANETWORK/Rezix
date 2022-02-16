@@ -1,7 +1,7 @@
 from telethon.sync import TelegramClient
 from telethon.tl.types import InputPeerChannel
-from telethon.errors.rpcerrorlist import PeerFloodError, UserPrivacyRestrictedError, PhoneNumberBannedError, ChatAdminRequiredError
-from telethon.errors.rpcerrorlist import ChatWriteForbiddenError, UserBannedInChannelError, UserAlreadyParticipantError, FloodWaitError
+from telethon.errors.rpcerrorlist import , UserPrivacyRestrictedError, PhoneNumberBannedError, ChatAdminRequiredError
+from telethon.errors.rpcerrorlist import ChatWriteForbiddenError, UserBannedInChannelError, UserAlreadyParticipantError
 from telethon.tl.functions.channels import InviteToChannelRequest
 import sys
 from telethon.tl.functions.messages import ImportChatInviteRequest, AddChatUserRequest
@@ -44,7 +44,6 @@ def banner():
     ]
     for char in b:
         print(f'{random.choice(colors)}{char}{rs}')
-    #print('=============Sexy Bitch==============')
     print(f'{lg}   Version: {w}1.6{lg} | Author: {w}MAMBA{rs}\n')
 
 
@@ -210,12 +209,7 @@ for acc in to_use:
         continue
     print(f'{info}{lg} Start: {w}{index}')
     #adding_status = 0
-    peer_flood_status = 0
     for user in members[index:stop]:
-        index += 1
-        if peer_flood_status == 100:
-            print(f'{error}{r} Too many Peer Flood Errors! Closing session...')
-            break
         try:
             if choice == 0:
                 c(InviteToChannelRequest(target_details, [user]))
@@ -231,10 +225,6 @@ for acc in to_use:
         except UserPrivacyRestrictedError:
             print(f'{minus}{grey} User: {cy}{acc_name}{lg} -- {r}User Privacy Restricted Error')
             continue
-        except PeerFloodError:
-            print(f'{error}{grey} User: {cy}{acc_name}{lg} -- {r}Peer Flood Error.')
-            peer_flood_status += 1
-            continue
         except ChatWriteForbiddenError:
             print(f'{error}{r} Can\'t add to group. Contact group admin to enable members adding')
             if index < approx_members_count:
@@ -249,9 +239,6 @@ for acc in to_use:
         except UserAlreadyParticipantError:
             print(f'{minus}{grey} User: {cy}{acc_name}{lg} -- {r}User is already a participant')
             continue
-        except FloodWaitError as e:
-            print(f'{error}{r} {e}')
-            break
         except ValueError:
             print(f'{error}{r} Error in Entity')
             continue
