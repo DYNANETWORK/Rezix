@@ -213,7 +213,7 @@ for acc in to_use:
     peer_flood_status = 0
     for user in members[index:stop]:
         index += 1
-        if peer_flood_status == 10:
+        if peer_flood_status == 100:
             print(f'{error}{r} Too many Peer Flood Errors! Closing session...')
             break
         try:
