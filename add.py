@@ -1,6 +1,6 @@
 from telethon.sync import TelegramClient
 from telethon.tl.types import InputPeerChannel
-from telethon.errors.rpcerrorlist import , UserPrivacyRestrictedError, PhoneNumberBannedError, ChatAdminRequiredError
+from telethon.errors.rpcerrorlist import UserPrivacyRestrictedError, PhoneNumberBannedError, ChatAdminRequiredError
 from telethon.errors.rpcerrorlist import ChatWriteForbiddenError, UserBannedInChannelError, UserAlreadyParticipantError
 from telethon.tl.functions.channels import InviteToChannelRequest
 import sys
